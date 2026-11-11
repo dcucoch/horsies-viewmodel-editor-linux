@@ -1,0 +1,375 @@
+#!/usr/bin/env bash
+# Apply settings_spy.txt to the spy viewmodel animations.
+set -u
+_lib_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../lib" && pwd)"
+. "$_lib_dir/common.sh"
+
+printf '%s\n' 'Applying Spy Settings...'
+settings_file='settings_spy.txt'
+smd_folder="$qc_folder_temp/c_spy_animations_anims"
+qc_file='c_spy_animations.qc'
+replace_snap
+(
+    reset_settings
+    settings_label='&::revolvers'
+    draw_sequence='draw'
+    draw_smd='draw.smd'
+    idle_sequence='idle'
+    idle_smd='idle.smd'
+    attack_sequence_1='fire'
+    attack_smd_1='fire.smd'
+    reload_sequence_2_is_alternative_start='true'
+    reload_sequence_1='reload'
+    reload_sequence_2='reload2'
+    reload_smd_1='reload.smd'
+    reload_smd_2='reload2.smd'
+    sequence_1='draw'
+    sequence_2='idle'
+    sequence_3='fire'
+    sequence_4='reload'
+    sequence_5='reload2'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::sapper'
+    draw_sequence='c_sapper_drawDeployed'
+    draw_smd='c_sapper_drawDeployed.smd'
+    idle_sequence='c_sapper_idle'
+    idle_smd='c_sapper_idle.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='c_sapper_drawDeployed'
+    sequence_2='c_sapper_idle'
+    sequence_4='layer_eyelids'
+    sequence_5='layer_sapper_needle'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::sapper'
+    draw_sequence='c_sapper_draw'
+    draw_smd='c_sapper_draw.smd'
+    idle_sequence='c_sapper_idle'
+    idle_smd='c_sapper_idle.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='c_sapper_draw'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::redtaperecorder'
+    draw_sequence='c_sd_sapper_draw'
+    draw_smd='c_sd_sapper_draw.smd'
+    idle_sequence='c_sd_sapper_idle'
+    idle_smd='c_sd_sapper_idle.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='c_sd_sapper_draw'
+    sequence_2='c_sd_sapper_idle'
+    sequence_3='layer_sd_sapper_reels'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::snackattack'
+    draw_sequence='c_breadmonster_sapper_draw'
+    draw_smd='c_breadmonster_sapper_draw.smd'
+    idle_sequence='c_breadmonster_sapper_drawDeployed'
+    idle_smd='c_breadmonster_sapper_drawDeployed.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='c_breadmonster_sapper_draw'
+    sequence_2='c_breadmonster_sapper_drawDeployed'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::butterfly'
+    draw_sequence='knife_draw'
+    draw_smd='knife_draw.smd'
+    idle_sequence='knife_idle'
+    idle_smd='knife_idle.smd'
+    attack_sequence_1='knife_stab_a'
+    attack_sequence_2='knife_stab_b'
+    attack_sequence_3='knife_stab_c'
+    attack_smd_1='knife_stab_a.smd'
+    attack_smd_2='knife_stab_b.smd'
+    attack_smd_3='knife_stab_c.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='knife_draw'
+    sequence_2='knife_idle'
+    sequence_3='knife_stab_a'
+    sequence_4='knife_stab_b'
+    sequence_5='knife_stab_c'
+    sequence_6='knife_backstab'
+    sequence_7='knife_backstab_up'
+    sequence_8='knife_backstab_down'
+    sequence_9='knife_backstab_idle'
+    sequence_10='knife_stun'
+    backstab_attack_sequence='knife_backstab'
+    backstab_stun_sequence='knife_stun'
+    backstab_attack_smd='knife_backstab.smd'
+    backstab_stun_smd='knife_stun.smd'
+    backstab_detect_sequence_up='knife_backstab_up'
+    backstab_detect_sequence_down='knife_backstab_down'
+    backstab_detect_sequence_idle='knife_backstab_idle'
+    backstab_detect_smd_up='knife_backstab_up.smd'
+    backstab_detect_smd_down='knife_backstab_down.smd'
+    backstab_detect_smd_idle='knife_backstab_idle.smd'
+    poke_stab_smd='knife_stab_a.smd'
+    horizontal_stab_smd='knife_stab_b.smd'
+    diagonal_stab_smd='knife_stab_c.smd'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::kunaiyerbigearner'
+    draw_sequence='eternal_draw'
+    draw_smd='eternal_draw.smd'
+    idle_sequence='eternal_idle'
+    idle_smd='eternal_idle.smd'
+    attack_sequence_1='eternal_stab_a'
+    attack_sequence_2='eternal_stab_b'
+    attack_sequence_3='eternal_stab_c'
+    attack_smd_1='eternal_stab_a.smd'
+    attack_smd_2='eternal_stab_b.smd'
+    attack_smd_3='eternal_stab_c.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='eternal_idle'
+    sequence_2='eternal_stab_a'
+    sequence_3='eternal_stab_b'
+    sequence_4='eternal_stab_c'
+    sequence_5='eternal_backstab'
+    sequence_6='eternal_backstab_up'
+    sequence_7='eternal_backstab_down'
+    sequence_8='eternal_backstab_idle'
+    sequence_9='eternal_stun'
+    sequence_10='eternal_draw'
+    backstab_attack_sequence='eternal_backstab'
+    backstab_stun_sequence='eternal_stun'
+    backstab_attack_smd='eternal_backstab.smd'
+    backstab_stun_smd='eternal_stun.smd'
+    backstab_detect_sequence_up='eternal_backstab_up'
+    backstab_detect_sequence_down='eternal_backstab_down'
+    backstab_detect_sequence_idle='eternal_backstab_idle'
+    backstab_detect_smd_up='eternal_backstab_up.smd'
+    backstab_detect_smd_down='eternal_backstab_down.smd'
+    backstab_detect_smd_idle='eternal_backstab_idle.smd'
+    poke_stab_smd='eternal_stab_a.smd'
+    horizontal_stab_smd='eternal_stab_b.smd'
+    diagonal_stab_smd='eternal_stab_c.smd'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::sharpdresser'
+    draw_sequence='acr_draw'
+    draw_smd='acr_draw.smd'
+    idle_sequence='acr_idle'
+    idle_smd='acr_idle.smd'
+    attack_sequence_1='acr_stab_a'
+    attack_sequence_2='acr_stab_b'
+    attack_sequence_3='acr_stab_c'
+    attack_smd_1='acr_stab_a.smd'
+    attack_smd_2='acr_stab_b.smd'
+    attack_smd_3='acr_stab_c.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='acr_draw'
+    sequence_2='acr_idle'
+    sequence_3='acr_stab_a'
+    sequence_4='acr_stab_b'
+    sequence_5='acr_stab_c'
+    sequence_6='acr_backstab'
+    sequence_7='acr_backstab_up'
+    sequence_8='acr_backstab_down'
+    sequence_9='acr_backstab_idle'
+    sequence_10='acr_stun'
+    backstab_attack_sequence='acr_backstab'
+    backstab_stun_sequence='acr_stun'
+    backstab_attack_smd='acr_backstab.smd'
+    backstab_stun_smd='acr_stun.smd'
+    backstab_detect_sequence_up='acr_backstab_up'
+    backstab_detect_sequence_down='acr_backstab_down'
+    backstab_detect_sequence_idle='acr_backstab_idle'
+    backstab_detect_smd_up='acr_backstab_up.smd'
+    backstab_detect_smd_down='acr_backstab_down.smd'
+    backstab_detect_smd_idle='acr_backstab_idle.smd'
+    poke_stab_smd='acr_stab_a.smd'
+    horizontal_stab_smd='acr_stab_b.smd'
+    diagonal_stab_smd='acr_stab_c.smd'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::allclassmelee'
+    draw_sequence='melee_allclass_draw'
+    draw_smd='melee_allclass_draw.smd'
+    idle_sequence='melee_allclass_idle'
+    idle_smd='melee_allclass_idle.smd'
+    attack_sequence_1='melee_allclass_swing'
+    attack_smd_1='melee_allclass_swing.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='melee_allclass_draw'
+    sequence_2='melee_allclass_idle'
+    sequence_3='melee_allclass_swing'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::grapplehook'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='grapple_draw'
+    other_sequence_2='grapple_idle'
+    other_sequence_3='grapple_fire_start'
+    other_sequence_4='grapple_fire_idle'
+    other_sequence_5='grapple_pull_start'
+    other_sequence_6='grapple_pull_idle'
+    other_sequence_7='grapple_pull_end'
+    sequence_1='grapple_draw'
+    sequence_2='grapple_idle'
+    sequence_3='grapple_fire_start'
+    sequence_4='grapple_fire_idle'
+    sequence_5='grapple_pull_start'
+    sequence_6='grapple_pull_idle'
+    sequence_7='grapple_pull_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::passtimeball'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='PASSTIME_ball_pickup'
+    other_sequence_2='PASSTIME_ball_idle'
+    other_sequence_3='PASSTIME_ball_catch1'
+    other_sequence_4='PASSTIME_ball_catch2'
+    other_sequence_5='PASSTIME_ball_throw_end'
+    other_sequence_6='PASSTIME_ball_throw_start'
+    other_sequence_7='PASSTIME_ball_throw_loop'
+    sequence_1='PASSTIME_ball_pickup'
+    sequence_2='PASSTIME_ball_idle'
+    sequence_3='PASSTIME_ball_catch1'
+    sequence_4='PASSTIME_ball_catch2'
+    sequence_5='PASSTIME_ball_throw_end'
+    sequence_6='PASSTIME_ball_throw_start'
+    sequence_7='PASSTIME_ball_throw_loop'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::spellcast'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='spell_draw'
+    other_sequence_2='spell_fire'
+    sequence_1='spell_draw'
+    sequence_2='spell_fire'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::throw'
+    draw_sequence='throw_draw'
+    draw_smd='throw_draw.smd'
+    idle_sequence='throw_idle'
+    idle_smd='throw_idle.smd'
+    attack_sequence_1='throw_fire'
+    attack_smd_1='throw_fire.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='throw_draw'
+    sequence_2='throw_idle'
+    sequence_3='throw_fire'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::revolversinspects'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='secondary_inspect_start'
+    other_sequence_2='secondary_inspect_idle'
+    other_sequence_3='secondary_inspect_end'
+    sequence_1='secondary_inspect_start'
+    sequence_2='secondary_inspect_idle'
+    sequence_3='secondary_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::sappersinspects'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='building_inspect_start'
+    other_sequence_2='building_inspect_idle'
+    other_sequence_3='building_inspect_end'
+    sequence_1='building_inspect_start'
+    sequence_2='building_inspect_idle'
+    sequence_3='building_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::snackattackinspects'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='breadsapper_inspect_start'
+    other_sequence_2='breadsapper_inspect_idle'
+    other_sequence_3='breadsapper_inspect_end'
+    sequence_1='breadsapper_inspect_start'
+    sequence_2='breadsapper_inspect_idle'
+    sequence_3='breadsapper_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::knivesinspects'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='melee_inspect_start'
+    other_sequence_2='melee_inspect_idle'
+    other_sequence_3='melee_inspect_end'
+    sequence_1='melee_inspect_start'
+    sequence_2='melee_inspect_idle'
+    sequence_3='melee_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::kunaiyerbigearnerinspects'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='item2_inspect_start'
+    other_sequence_2='item2_inspect_idle'
+    other_sequence_3='item2_inspect_end'
+    sequence_1='item2_inspect_start'
+    sequence_2='item2_inspect_idle'
+    sequence_3='item2_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::sharpdresserinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='item1_inspect_start'
+    other_sequence_2='item1_inspect_idle_A'
+    other_sequence_3='item1_inspect_idle_B'
+    other_sequence_4='item1_inspect_end'
+    sequence_1='item1_inspect_start'
+    sequence_2='item1_inspect_idle_A'
+    sequence_3='item1_inspect_idle_B'
+    sequence_4='item1_inspect_end'
+    apply_settings
+)
+
+
+cd "$qc_folder_temp" || exit 1
+rm -f "$settings_file"

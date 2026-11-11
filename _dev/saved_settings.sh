@@ -1,0 +1,3 @@
+automatic_preloading=on
+disable_tracers=off
+hide_errors=on

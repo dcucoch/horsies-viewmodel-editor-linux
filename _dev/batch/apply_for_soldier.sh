@@ -1,0 +1,406 @@
+#!/usr/bin/env bash
+# Apply settings_soldier.txt to the soldier viewmodel animations.
+set -u
+_lib_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/../lib" && pwd)"
+. "$_lib_dir/common.sh"
+
+printf '%s\n' 'Applying Soldier Settings...'
+settings_file='settings_soldier.txt'
+smd_folder="$qc_folder_temp/c_soldier_animations_anims"
+qc_file='c_soldier_animations.qc'
+replace_snap
+(
+    reset_settings
+    settings_label='&::rocketlaunchers'
+    draw_sequence='dh_draw'
+    draw_smd='dh_draw.smd'
+    idle_sequence='dh_idle'
+    idle_smd='dh_idle.smd'
+    attack_sequence_1='dh_fire'
+    attack_smd_1='dh_fire.smd'
+    reload_sequence_2_is_alternative_start='true'
+    reload_sequence_1='dh_reload_start'
+    reload_sequence_2='dh_reload_start_alt'
+    reload_sequence_3='dh_reload_loop'
+    reload_sequence_4='dh_reload_finish'
+    reload_sequence_5='dh_reload_loop_alt'
+    reload_sequence_6='dh_reload_finish_alt'
+    reload_smd_1='dh_reload_start.smd'
+    reload_smd_2='dh_reload_start_alt.smd'
+    reload_smd_3='dh_reload_loop.smd'
+    reload_smd_4='dh_reload_finish.smd'
+    reload_smd_5='dh_reload_loop_alt.smd'
+    reload_smd_6='dh_reload_finish_alt.smd'
+    sequence_1='dh_idle'
+    sequence_2='dh_fire'
+    sequence_3='dh_draw'
+    sequence_4='dh_reload_start'
+    sequence_5='dh_reload_loop'
+    sequence_6='dh_reload_finish'
+    sequence_7='dh_reload_start_alt'
+    sequence_8='dh_reload_loop_alt'
+    sequence_9='dh_reload_finish_alt'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::rocketlaunchers'
+    idle_sequence='dh_idle'
+    idle_smd='dh_idle.smd'
+    secondary_attack_sequence_1='mangler_fire_super'
+    secondary_attack_smd_1='mangler_fire_super.smd'
+    reload_sequence_2_is_alternative_start='false'
+    reload_sequence_1='mangler_reload_start'
+    reload_sequence_2='mangler_reload_loop'
+    reload_sequence_3='mangler_reload_finish'
+    reload_smd_1='mangler_reload_start.smd'
+    reload_smd_2='mangler_reload_loop.smd'
+    reload_smd_3='mangler_reload_finish.smd'
+    sequence_1='mangler_fire_super'
+    sequence_2='mangler_reload_start'
+    sequence_3='mangler_reload_loop'
+    sequence_4='mangler_reload_finish'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::original'
+    draw_sequence='bet_draw'
+    draw_smd='bet_draw.smd'
+    idle_sequence='bet_idle'
+    idle_smd='bet_idle.smd'
+    attack_sequence_1='bet_fire'
+    attack_smd_1='bet_fire.smd'
+    reload_sequence_2_is_alternative_start='false'
+    reload_sequence_1='bet_reload_start'
+    reload_sequence_2='bet_reload_loop'
+    reload_sequence_3='bet_reload_finish'
+    reload_smd_1='bet_reload_start.smd'
+    reload_smd_2='bet_reload_loop.smd'
+    reload_smd_3='bet_reload_finish.smd'
+    sequence_1='bet_idle'
+    sequence_2='bet_fire'
+    sequence_3='bet_draw'
+    sequence_4='bet_reload_start'
+    sequence_5='bet_reload_loop'
+    sequence_6='bet_reload_finish'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::shotguns'
+    draw_sequence='draw'
+    draw_smd='draw.smd'
+    idle_sequence='idle'
+    idle_smd='idle.smd'
+    attack_sequence_1='fire'
+    attack_smd_1='fire.smd'
+    reload_sequence_2_is_alternative_start='false'
+    reload_sequence_1='reload_start'
+    reload_sequence_2='reload_loop'
+    reload_sequence_3='reload_end'
+    reload_smd_1='reload_start.smd'
+    reload_smd_2='reload_loop.smd'
+    reload_smd_3='reload_end.smd'
+    sequence_1='draw'
+    sequence_2='idle'
+    sequence_3='fire'
+    sequence_4='reload_start'
+    sequence_5='reload_loop'
+    sequence_6='reload_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::bison'
+    draw_sequence='bison_draw'
+    draw_smd='bison_draw.smd'
+    idle_sequence='bison_idle'
+    idle_smd='bison_idle.smd'
+    attack_sequence_1='bison_fire'
+    attack_smd_1='bison_fire.smd'
+    reload_sequence_2_is_alternative_start='false'
+    reload_sequence_1='bison_reload_start'
+    reload_sequence_2='bison_reload_loop'
+    reload_sequence_3='bison_reload_end'
+    reload_smd_1='bison_reload_start.smd'
+    reload_smd_2='bison_reload_loop.smd'
+    reload_smd_3='bison_reload_end.smd'
+    sequence_1='bison_draw'
+    sequence_2='bison_idle'
+    sequence_3='bison_fire'
+    sequence_4='bison_reload_start'
+    sequence_5='bison_reload_loop'
+    sequence_6='bison_reload_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::buffbannerbb'
+    draw_sequence='bb_draw'
+    draw_smd='bb_draw.smd'
+    idle_sequence='bb_idle'
+    idle_smd='bb_idle.smd'
+    attack_sequence_1='bb_fire_red'
+    attack_sequence_2='bb_fire_blue'
+    attack_smd_1='bb_fire_red.smd'
+    attack_smd_2='bb_fire_blue.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='bb_draw'
+    sequence_2='bb_idle'
+    sequence_3='bb_fire_red'
+    sequence_4='bb_fire_blue'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::concheror'
+    draw_sequence='wh_draw'
+    draw_smd='wh_draw.smd'
+    idle_sequence='wh_idle'
+    idle_smd='wh_idle.smd'
+    attack_sequence_1='wh_fire_red'
+    attack_sequence_2='wh_fire_blue'
+    attack_smd_1='wh_fire_red.smd'
+    attack_smd_2='wh_fire_blue.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='wh_draw'
+    sequence_2='wh_idle'
+    sequence_3='wh_fire_red'
+    sequence_4='wh_fire_blue'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::melee'
+    draw_sequence='s_draw'
+    draw_smd='s_draw.smd'
+    idle_sequence='s_idle'
+    idle_smd='s_idle.smd'
+    attack_sequence_1='s_swing_a'
+    attack_sequence_2='s_swing_b'
+    attack_sequence_3='s_swing_c'
+    attack_smd_1='s_swing_a.smd'
+    attack_smd_2='s_swing_b.smd'
+    attack_smd_3='s_swing_c.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='s_draw'
+    sequence_2='s_idle'
+    sequence_3='s_swing_a'
+    sequence_4='s_swing_b'
+    sequence_5='s_swing_c'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::allclassmelee'
+    draw_sequence='melee_allclass_draw'
+    draw_smd='melee_allclass_draw.smd'
+    idle_sequence='melee_allclass_idle'
+    idle_smd='melee_allclass_idle.smd'
+    attack_sequence_1='melee_allclass_swing'
+    attack_smd_1='melee_allclass_swing.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='melee_allclass_draw'
+    sequence_2='melee_allclass_idle'
+    sequence_3='melee_allclass_swing'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::grapplehook'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='grapple_draw'
+    other_sequence_2='grapple_idle'
+    other_sequence_3='grapple_fire_start'
+    other_sequence_4='grapple_fire_idle'
+    other_sequence_5='grapple_pull_start'
+    other_sequence_6='grapple_pull_idle'
+    other_sequence_7='grapple_pull_end'
+    sequence_1='grapple_draw'
+    sequence_2='grapple_idle'
+    sequence_3='grapple_fire_start'
+    sequence_4='grapple_fire_idle'
+    sequence_5='grapple_pull_start'
+    sequence_6='grapple_pull_idle'
+    sequence_7='grapple_pull_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::passtimeball'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='PASSTIME_ball_pickup'
+    other_sequence_2='PASSTIME_ball_idle'
+    other_sequence_3='PASSTIME_ball_catch1'
+    other_sequence_4='PASSTIME_ball_catch2'
+    other_sequence_5='PASSTIME_ball_throw_end'
+    other_sequence_6='PASSTIME_ball_throw_start'
+    other_sequence_7='PASSTIME_ball_throw_loop'
+    sequence_1='PASSTIME_ball_pickup'
+    sequence_2='PASSTIME_ball_idle'
+    sequence_3='PASSTIME_ball_catch1'
+    sequence_4='PASSTIME_ball_catch2'
+    sequence_5='PASSTIME_ball_throw_end'
+    sequence_6='PASSTIME_ball_throw_start'
+    sequence_7='PASSTIME_ball_throw_loop'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::spellcast'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='spell_draw'
+    other_sequence_2='spell_fire'
+    sequence_1='spell_draw'
+    sequence_2='spell_fire'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::throw'
+    draw_sequence='throw_draw'
+    draw_smd='throw_draw.smd'
+    idle_sequence='throw_idle'
+    idle_smd='throw_idle.smd'
+    attack_sequence_1='throw_fire'
+    attack_smd_1='throw_fire.smd'
+    reload_sequence_2_is_alternative_start='false'
+    sequence_1='throw_draw'
+    sequence_2='throw_idle'
+    sequence_3='throw_fire'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::primaryinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='primary_inspect_start'
+    other_sequence_2='primary_inspect_idle'
+    other_sequence_3='primary_inspect_end'
+    sequence_1='primary_inspect_start'
+    sequence_2='primary_inspect_idle'
+    sequence_3='primary_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::originalinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='primary_alt1_inspect_start'
+    other_sequence_2='primary_alt1_inspect_idle'
+    other_sequence_3='primary_alt1_inspect_end'
+    sequence_1='primary_alt1_inspect_start'
+    sequence_2='primary_alt1_inspect_idle'
+    sequence_3='primary_alt1_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::secondaryinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='secondary_inspect_start'
+    other_sequence_2='secondary_inspect_idle'
+    other_sequence_3='secondary_inspect_end'
+    sequence_1='secondary_inspect_start'
+    sequence_2='secondary_inspect_idle'
+    sequence_3='secondary_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::bisoninspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='secondary_alt1_inspect_start'
+    other_sequence_2='secondary_alt1_inspect_idle'
+    other_sequence_3='secondary_alt1_inspect_end'
+    sequence_1='secondary_alt1_inspect_start'
+    sequence_2='secondary_alt1_inspect_idle'
+    sequence_3='secondary_alt1_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::bufbannerbbinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='item1_inspect_start'
+    other_sequence_2='item1_inspect_idle'
+    other_sequence_3='item1_inspect_end'
+    sequence_1='item1_inspect_start'
+    sequence_2='item1_inspect_idle'
+    sequence_3='item1_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::concherorinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='item2_inspect_start'
+    other_sequence_2='item2_inspect_idle'
+    other_sequence_3='item2_inspect_end'
+    sequence_1='item2_inspect_start'
+    sequence_2='item2_inspect_idle'
+    sequence_3='item2_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::meleeinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='melee_inspect_start'
+    other_sequence_2='melee_inspect_idle'
+    other_sequence_3='melee_inspect_end'
+    sequence_1='melee_inspect_start'
+    sequence_2='melee_inspect_idle'
+    sequence_3='melee_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::meleeinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='melee_allclass_inspect_start'
+    other_sequence_2='melee_allclass_inspect_idle'
+    other_sequence_3='melee_allclass_inspect_end'
+    sequence_1='melee_allclass_inspect_start'
+    sequence_2='melee_allclass_inspect_idle'
+    sequence_3='melee_allclass_inspect_end'
+    apply_settings
+)
+
+(
+    reset_settings
+    settings_label='&::zatoichiinspect'
+    reload_sequence_2_is_alternative_start='false'
+    other_sequence_1='special_inspect_start'
+    other_sequence_2='special_inspect_idle'
+    other_sequence_3='special_inspect_end'
+    sequence_1='special_inspect_start'
+    sequence_2='special_inspect_idle'
+    sequence_3='special_inspect_end'
+    apply_settings
+)
+
+
+cd "$qc_folder_temp" || exit 1
+rm -f "$settings_file"
