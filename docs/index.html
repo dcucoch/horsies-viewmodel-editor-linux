@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Horsie's Viewmodel Editor for Linux — TF2 Viewmodel Editor</title>
+  <meta name="description" content="Linux port of Horsie's Viewmodel Editor. Edit Team Fortress 2 viewmodels and animations on Linux and Steam Deck with Wine — no Windows install or VM needed.">
+  <link rel="canonical" href="https://dcucoch.github.io/horsies-viewmodel-editor-linux/">
+  <meta name="theme-color" content="#0f1218">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Horsie's Viewmodel Editor — Linux Port">
+  <meta property="og:title" content="Horsie's Viewmodel Editor for Linux — TF2 Viewmodel Editor">
+  <meta property="og:description" content="Edit Team Fortress 2 viewmodels and animations on Linux and Steam Deck. Wine + Source SDK, no Windows needed.">
+  <meta property="og:url" content="https://dcucoch.github.io/horsies-viewmodel-editor-linux/">
+  <meta property="og:image" content="https://dcucoch.github.io/horsies-viewmodel-editor-linux/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Horsie's Viewmodel Editor — Linux port for Team Fortress 2">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Horsie's Viewmodel Editor for Linux — TF2 Viewmodel Editor">
+  <meta name="twitter:description" content="Edit Team Fortress 2 viewmodels and animations on Linux and Steam Deck. Wine + Source SDK, no Windows needed.">
+  <meta name="twitter:image" content="https://dcucoch.github.io/horsies-viewmodel-editor-linux/social-preview.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Horsie's Viewmodel Editor — Linux Port",
+    "alternateName": "Horsie's Viewmodel Editor for Linux",
+    "operatingSystem": "Linux",
+    "applicationCategory": "GameApplication",
+    "description": "A Linux port of Horsie's Viewmodel Editor for Team Fortress 2. Edit TF2 viewmodels and animations on Linux and Steam Deck using Wine and the Source SDK.",
+    "url": "https://dcucoch.github.io/horsies-viewmodel-editor-linux/",
+    "downloadUrl": "https://github.com/dcucoch/horsies-viewmodel-editor-linux/releases/latest",
+    "codeRepository": "https://github.com/dcucoch/horsies-viewmodel-editor-linux",
+    "license": "https://opensource.org/licenses/MIT",
+    "isAccessibleForFree": true,
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "author": { "@type": "Person", "name": "dcucoch" },
+    "sameAs": [
+      "https://github.com/dcucoch/horsies-viewmodel-editor-linux",
+      "https://github.com/a-horsey/horsies-viewmodel-editor",
+      "https://gamebanana.com/tools/10146"
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does Horsie's Viewmodel Editor work on Linux?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. This project is the Linux port. It replaces the original Windows batch files with bash scripts and runs the Windows helper tools through Wine." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does it work on the Steam Deck?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, in Desktop Mode. The requirements are the same as desktop Linux: Wine, Wine Mono, and the Source SDK tools." }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need Windows or a virtual machine to edit TF2 viewmodels?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. The editor runs on Linux under Wine. You do not need a Windows install or a VM." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is Horsie's Viewmodel Editor safe to use in TF2?",
+        "acceptedAnswer": { "@type": "Answer", "text": "It changes client-side viewmodel animations and packs them into a tf/custom VPK like any viewmodel mod. It does not touch the game executable. Servers with sv_pure can reject custom content, but that is not a ban." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow"><span class="dot"></span>Linux &amp; Steam Deck</span>
+    <h1>Horsie's Viewmodel Editor <span class="accent">Linux Port</span></h1>
+    <p class="lede">
+      The full TF2 viewmodel editor running on Linux. Move, rotate, hide or freeze
+      viewmodels, remove the left arm, keep beams and flames visible, and load custom
+      animations — without a Windows install or a virtual machine.
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/dcucoch/horsies-viewmodel-editor-linux/releases/latest">Download for Linux</a>
+      <a class="btn btn-ghost" href="https://github.com/dcucoch/horsies-viewmodel-editor-linux">View source on GitHub</a>
+      <a class="btn btn-ghost" href="#install">Install guide</a>
+    </div>
+
+    <figure class="shot">
+      <img src="screenshot.jpg" width="1800" height="760" alt="Horsie's Viewmodel Editor — edit your viewmodels any way you want: move, rotate, hide and more">
+      <figcaption>Edit your viewmodels any way you want. Screenshot from the original editor by a-horsey.</figcaption>
+    </figure>
+  </div>
+</header>
+
+<main>
+  <section id="features">
+    <div class="wrap">
+      <h2>What you can do with it</h2>
+      <p class="section-lede">
+        Horsie's Viewmodel Editor is a Team Fortress 2 modding tool. Pick the settings
+        you want and it edits the viewmodel animations and packs them into a VPK in
+        your <code>tf/custom</code> folder.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <span class="icon" aria-hidden="true">↔</span>
+          <h3>Move and rotate</h3>
+          <p>Reposition any viewmodel on the X, Y and Z axes. Make centered guns or build your own layout.</p>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">◉</span>
+          <h3>Hide anything</h3>
+          <p>Hide whole weapons or only specific animations such as draws, reloads and attacks.</p>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">❚❚</span>
+          <h3>Static animations</h3>
+          <p>Stop draws, reloads and attacks from moving. Works on most animations in the game.</p>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">✋</span>
+          <h3>Remove the left arm</h3>
+          <p>Remove the left arm from most weapons, even ones where it is normally hidden.</p>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">✦</span>
+          <h3>Keep effects visible</h3>
+          <p>Keep medigun beams, flamethrower flames, tracers and spy backstab animations while hidden.</p>
+        </div>
+        <div class="card">
+          <span class="icon" aria-hidden="true">▣</span>
+          <h3>Custom animations</h3>
+          <p>Drop in custom viewmodel animation VPKs. The editor checks compatibility and applies your settings.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="install">
+    <div class="wrap">
+      <h2>How to install on Linux</h2>
+      <p class="section-lede">
+        You need Wine, Wine Mono (or Mono), and the Source SDK tools. <code>vpk</code>
+        comes with the SDK, but the editor also includes a Python packer, so Python 3
+        alone is enough for packing.
+      </p>
+
+      <ol class="steps">
+        <li><strong>Install the basics.</strong> Wine and Python 3 are enough to start. The commands for your distro are below.</li>
+        <li><strong>Download the port.</strong> Grab the latest release from <a href="https://github.com/dcucoch/horsies-viewmodel-editor-linux/releases/latest">GitHub Releases</a> or clone the repository.</li>
+        <li><strong>Put the folder in your game.</strong> Place it in <code>.../Team Fortress 2/tf/</code> (recommended) or <code>tf/custom/</code>.</li>
+        <li><strong>Edit your settings.</strong> Open <code>settings_scout.txt</code>, <code>settings_soldier.txt</code>, and so on, and change the values you want.</li>
+        <li><strong>Run it.</strong> Close TF2 first, then run <code>./start.sh</code> and pick your classes. The mod is written to <code>tf/custom/__Horsie'sViewmodelEditor.vpk</code>.</li>
+      </ol>
+
+      <pre><code># Debian / Ubuntu / Mint
+sudo apt install wine python3
+
+# Arch Linux
+sudo pacman -S wine python3
+
+# Fedora
+sudo dnf install wine python3
+
+# Then
+chmod +x start.sh
+./start.sh</code></pre>
+
+      <p class="note">
+        <strong>Wine Mono:</strong> run <code>winecfg</code> once and accept the Mono prompt.
+        If <code>~/.wine/drive_c/windows/mono</code> exists, it worked. The Mono package in
+        Ubuntu/Mint is missing <code>Microsoft.VisualBasic</code>, which Crowbar needs, so use
+        Wine Mono there.
+      </p>
+
+      <p class="note">
+        <strong>studiomdl:</strong> the Linux SDK depot has <code>vpk</code> but no
+        <code>studiomdl</code>. Point the editor at a Windows SDK 2013 build:
+        <code>STUDIOMDL=~/sdk2013mp-win/bin/studiomdl.exe ./start.sh</code>. Every tool can be
+        overridden with <code>HLEXTRACT=... CROWBAR=... STUDIOMDL=... VPK=... ./start.sh</code>.
+      </p>
+    </div>
+  </section>
+
+  <section id="steam-deck">
+    <div class="wrap">
+      <h2>Steam Deck and desktop Linux</h2>
+      <p class="section-lede">
+        Because the editor runs under Wine, it also runs on the Steam Deck in Desktop Mode.
+        The dependencies are the same as any Arch-based Linux install: Wine, Wine Mono and
+        the Source SDK tools. Install them with <code>pacman</code> (or your preferred
+        method), then follow the same steps above.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h3>Supported systems</h3>
+          <p>Any Linux distribution that can run Wine and the Source SDK tools: Arch, Ubuntu, Mint, Fedora, and SteamOS on the Steam Deck.</p>
+        </div>
+        <div class="card">
+          <h3>No Windows, no VM</h3>
+          <p>The original tool shipped only Windows batch files. This port replaces them with bash scripts and keeps the same settings and animation data.</p>
+        </div>
+        <div class="card">
+          <h3>Fixed Viewmodels support</h3>
+          <p>Drop the Fixed Viewmodels VPK into <code>fixed viewmodels addon/</code> and run the editor again. It is applied automatically on the next run.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="guides">
+    <div class="wrap">
+      <h2>Position and rotation guides</h2>
+      <p class="section-lede">
+        Each weapon has position and rotation options. These guides show which axis does
+        what, so you can dial in a centered gun or a custom viewmodel position.
+      </p>
+      <div class="guides">
+        <figure>
+          <img src="guide_position.jpg" width="3700" height="2100" loading="lazy" alt="Guide showing TF2 viewmodel position on the X, Y and Z axes">
+          <figcaption>Position — X, Y and Z movement.</figcaption>
+        </figure>
+        <figure>
+          <img src="guide_rotation.jpg" width="3700" height="2100" loading="lazy" alt="Guide showing TF2 viewmodel rotation on the X, Y and Z axes">
+          <figcaption>Rotation — X, Y and Z rotation.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <h2>Frequently asked questions</h2>
+
+      <details open>
+        <summary>Does Horsie's Viewmodel Editor work on Linux?</summary>
+        <p>Yes. This project is the Linux port. The original tool only shipped Windows batch files, so this port replaces them with bash scripts and runs the Windows helper tools through Wine.</p>
+      </details>
+
+      <details>
+        <summary>Does it work on the Steam Deck?</summary>
+        <p>Yes, in Desktop Mode. The requirements are the same as any other Linux machine: Wine, Wine Mono and the Source SDK tools.</p>
+      </details>
+
+      <details>
+        <summary>Do I need Windows or a virtual machine?</summary>
+        <p>No. You need Wine and the Source SDK tools. Everything else runs from <code>./start.sh</code>.</p>
+      </details>
+
+      <details>
+        <summary>Will this get me VAC banned?</summary>
+        <p>It only changes client-side viewmodel animations and packs them into a <code>tf/custom</code> VPK, the same way any viewmodel mod works. It does not touch the game executable or how you connect to servers. Servers with <code>sv_pure</code> can reject custom content, but that is not a ban.</p>
+      </details>
+
+      <details>
+        <summary>Where do I download it?</summary>
+        <p>Use the <a href="https://github.com/dcucoch/horsies-viewmodel-editor-linux/releases/latest">Releases page</a> or the green Code button on the <a href="https://github.com/dcucoch/horsies-viewmodel-editor-linux">GitHub repository</a>.</p>
+      </details>
+
+      <details>
+        <summary>It says "Wrong folder" or "Game is currently running"</summary>
+        <p>Move the editor folder into <code>.../Team Fortress 2/tf/</code> or <code>tf/custom/</code> and run it from there. Close Team Fortress 2 before installing: the game keeps the VPK locked while it is open.</p>
+      </details>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>
+      Original editor, settings, presets and animation data by
+      <a href="https://github.com/a-horsey">a-horsey</a>.
+      Linux port by <a href="https://github.com/dcucoch">dcucoch</a>.
+      Available on <a href="https://github.com/dcucoch/horsies-viewmodel-editor-linux">GitHub</a>
+      and the original on <a href="https://gamebanana.com/tools/10146">GameBanana</a>.
+    </p>
+    <p class="small">
+      MIT licensed. This port is a derivative work and is not endorsed by the original author.
+      Team Fortress 2 is a trademark of Valve Corporation. This site is not affiliated with Valve.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
