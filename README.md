@@ -1,6 +1,18 @@
-# Horsie's Viewmodel Editor (Linux port)
+# Horsie's Viewmodel Editor — Linux Port
 
-Linux port of Horsie's Viewmodel Editor for Team Fortress 2.
+[![Platform: Linux](https://img.shields.io/badge/platform-Linux-2ea44f?logo=linux&logoColor=white)](#)
+[![Steam Deck](https://img.shields.io/badge/Steam%20Deck-Desktop%20Mode-1a9fff?logo=steamdeck&logoColor=white)](#)
+[![TF2](https://img.shields.io/badge/game-Team%20Fortress%202-b8382e)](#)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+**Horsie's Viewmodel Editor for Linux.** This is a Linux port of the TF2
+viewmodel editor by [a-horsey](https://github.com/a-horsey), so you can edit
+Team Fortress 2 viewmodels and animations on Linux — no Windows install and no
+virtual machine. It runs under Wine with the Source SDK tools and also works on
+the Steam Deck in Desktop Mode.
+
+All settings, presets, animation data and docs are from the original project.
+Only the Windows batch files were replaced with bash scripts.
 
 Original project by a-horsey:
 - source: https://github.com/a-horsey/horsies-viewmodel-editor
@@ -8,12 +20,29 @@ Original project by a-horsey:
 - gamebanana: https://gamebanana.com/tools/10146
 - thread: https://www.teamfortress.tv/61858/horsies-viewmodel-editor
 
-All settings, presets, animation data and docs are from the original project.
-Only the windows batch files were replaced with bash scripts.
-
-![Thumbnail](https://i.imgur.com/JH5boq4.png)
+![Horsie's Viewmodel Editor menu](https://i.imgur.com/JH5boq4.png)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H5W12AH5GM)
+
+## What is this?
+
+Horsie's Viewmodel Editor is a TF2 modding tool that changes how your
+viewmodels look and animate. You pick the settings you want, and it edits the
+animations and packs them into a VPK in your `tf/custom` folder.
+
+Common things people use it for:
+
+- moving and rotating viewmodels (centered guns, custom positions)
+- hiding weapons, draws, reloads or attacks
+- making animations static
+- removing the left arm
+- keeping medigun beams, flamethrower flames or tracers visible while hidden
+- applying custom viewmodel animations and the Fixed Viewmodels pack
+
+If you searched for **Horsie's Viewmodel Editor Linux**, **TF2 viewmodel editor
+Linux**, **how to edit TF2 viewmodels on Linux** or **TF2 viewmodel mods on
+Steam Deck**, this is the project you want.
+
 ## Features
 
 - Edit your viewmodels however you want. Includes many possible settings for every weapon
@@ -102,6 +131,29 @@ main folder and run start.sh.
 - studiomdl not found = set STUDIOMDL.
 - no vpk = install python3.
 - more settings info is in `_README.txt`.
+
+## FAQ
+
+**Does Horsie's Viewmodel Editor work on Linux?**
+Yes. This repository is the Linux port. The original tool only shipped Windows
+batch files, so this port replaces them with bash scripts and runs the Windows
+helper tools through Wine.
+
+**Does it work on the Steam Deck?**
+Yes, in Desktop Mode. The requirements are the same as any other Linux
+machine: Wine, Wine Mono, and the Source SDK tools.
+
+**Do I need Windows or a VM?**
+No. You need Wine and the Source SDK tools listed in [Setup](#setup).
+
+**Will this get me VAC banned?**
+It only changes client-side viewmodel animations and packs them into a
+`tf/custom` VPK, the same way any viewmodel mod works. It does not touch the
+game executable or connect to servers differently.
+
+**Where do I download it?**
+Use the green Code button on this repository, or the Releases page once a
+release is published.
 
 ## Credits
 
