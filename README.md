@@ -149,11 +149,12 @@ No. You need Wine and the Source SDK tools listed in [Setup](#setup).
 **Will this get me VAC banned?**
 It only changes client-side viewmodel animations and packs them into a
 `tf/custom` VPK, the same way any viewmodel mod works. It does not touch the
-game executable or connect to servers differently.
+game executable or how you connect to servers. Servers with `sv_pure` can
+reject custom content, but that is not a ban.
 
 **Where do I download it?**
-Use the green Code button on this repository, or the Releases page once a
-release is published.
+Use the [Releases](https://github.com/dcucoch/horsies-viewmodel-editor-linux/releases)
+page, or the green Code button on this repository.
 
 ## Credits
 
