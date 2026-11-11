@@ -20,6 +20,8 @@ Original project by a-horsey:
 - gamebanana: https://gamebanana.com/tools/10146
 - thread: https://www.teamfortress.tv/61858/horsies-viewmodel-editor
 
+Website and install guide: https://dcucoch.github.io/horsies-viewmodel-editor-linux/
+
 ![Horsie's Viewmodel Editor menu](https://i.imgur.com/JH5boq4.png)
 
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H5W12AH5GM)
