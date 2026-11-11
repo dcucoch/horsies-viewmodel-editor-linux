@@ -13,6 +13,7 @@ Only the windows batch files were replaced with bash scripts.
 
 ![Thumbnail](https://i.imgur.com/JH5boq4.png)
 
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/H5W12AH5GM)
 ## Features
 
 - Edit your viewmodels however you want. Includes many possible settings for every weapon
